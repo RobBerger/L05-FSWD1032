@@ -14,7 +14,7 @@
 // console.log(newGreeting.greet());
 
 class Animal {
-    protected name: string;
+    public readonly name: string;
 
     constructor(animalName: string) {
         this.name = animalName;
@@ -33,3 +33,4 @@ class Cow extends Animal{
 
 let bob = new Cow("Bob");
 bob.move();
+bob.name = "Sue";
