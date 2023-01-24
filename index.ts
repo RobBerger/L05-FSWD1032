@@ -14,7 +14,7 @@
 // console.log(newGreeting.greet());
 
 class Animal {
-    private name: string;
+    name: string;
 
     constructor(animalName: string) {
         this.name = animalName;
