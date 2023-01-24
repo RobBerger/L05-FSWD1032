@@ -25,3 +25,4 @@ class Cow extends Animal {
 }
 let bob = new Cow("Bob");
 bob.move();
+bob.name = "Sue";
