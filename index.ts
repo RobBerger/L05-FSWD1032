@@ -14,7 +14,7 @@
 // console.log(newGreeting.greet());
 
 class Animal {
-    public readonly name: string;
+    public name: string;
 
     constructor(animalName: string) {
         this.name = animalName;
