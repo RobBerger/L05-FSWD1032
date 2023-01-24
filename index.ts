@@ -1,14 +1,35 @@
-class Greeting {
-    name: string;
+// class Greeting {
+//     name: string;
 
-    constructor(greeterName: string) {
-        this.name = greeterName;
-    }
+//     constructor(greeterName: string) {
+//         this.name = greeterName;
+//     }
 
-    greet(): string {
-        return `Hello ${this.name}!`;
+//     greet(): string {
+//         return `Hello ${this.name}!`;
+//     }
+// }
+
+// let newGreeting = new Greeting("James");
+// console.log(newGreeting.greet());
+
+class Animal {
+    private name: string;
+
+    constructor(animalName: string) {
+        this.name = animalName;
     }
 }
 
-let newGreeting = new Greeting("James");
-console.log(newGreeting.greet());
+class Cow extends Animal{
+    constructor(name: string) {
+        super(name);
+    }
+
+    move(distance: number = 2) {
+        console.log(`${this.name} moved ${distance} units.`);
+    }
+}
+
+let bob = new Cow("Bob");
+bob.move();
