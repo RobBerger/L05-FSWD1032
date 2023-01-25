@@ -35,3 +35,5 @@ class Circle {
     }
 }
 Circle.PI = 3.14;
+let myCircle = new Circle(10);
+console.log(myCircle.getArea());
