@@ -1,14 +1,20 @@
 "use strict";
 class Animal {
-    onTheMove() {
-        console.log('The animal is on the move!');
+    constructor(animalName) {
+        this.name = animalName;
+    }
+    move(distance = 0) {
+        console.log(`${this.name} moved ${distance} units.`);
     }
 }
-class Cat extends Animal {
-    meow() {
-        console.log('Meow!');
+class Cow extends Animal {
+    constructor(name) {
+        super(name);
+    }
+    move(distance = 2) {
+        console.log('Mooing along....');
+        super.move(distance);
     }
 }
-let cat = new Cat();
-cat.onTheMove();
-cat.meow();
+let Bob = new Cow("Bob");
+Bob.move();
