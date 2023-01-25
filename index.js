@@ -3,18 +3,26 @@ class Animal {
     constructor(animalName) {
         this.name = animalName;
     }
-    move(distance = 0) {
-        console.log(`${this.name} moved ${distance} units.`);
+}
+class Penguin extends Animal {
+    constructor(penguinName) {
+        super(penguinName);
+        this.canFly = false;
+    }
+    move() {
+        console.log('Waddling along...');
     }
 }
 class Cow extends Animal {
-    constructor(name) {
-        super(name);
+    constructor(cowName, cowFoodType = "grass") {
+        super(cowName);
+        this.foodType = cowFoodType;
     }
-    move(distance = 2) {
-        console.log('Mooing along....');
-        super.move(distance);
+    move() {
+        console.log(`Moooing along.... eating ${this.foodType}`);
     }
 }
-let Bob = new Cow("Bob");
-Bob.move();
+let bob = new Cow("Bob");
+bob.move();
+let phil = new Penguin("Phil");
+phil.move();
