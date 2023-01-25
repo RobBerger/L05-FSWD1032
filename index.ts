@@ -46,4 +46,5 @@ class Circle {
         return Circle.PI * this.radius * this.radius;
     }
 }
-
+let myCircle= new Circle(10);
+console.log(myCircle.getArea());
