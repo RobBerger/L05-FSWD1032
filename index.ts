@@ -1,17 +1,35 @@
-class Person {
-    private _name: string = "Nelson";
+// class Person {
+//     private _name: string = "Nelson";
 
-    get name(): string {
-        return this._name;
+//     get name(): string {
+//         return this._name;
+//     }
+
+//     set name(newName: string) {
+//         if (newName != "") {
+//             this._name = newName;
+//         }
+//     }
+// }
+
+// let Bob = new Person ();
+// Bob.name = "Bob Bertson";
+// console.log(Bob.name);
+
+class Counter {
+    private static count = 0;
+
+    static increment(){
+        Counter.count++;
     }
 
-    set name(newName: string) {
-        if (newName != "") {
-            this._name = newName;
-        }
+    static getCount(){
+        return Counter.count;
     }
 }
 
-let Bob = new Person ();
-Bob.name = "Bob Bertson";
-console.log(Bob.name);
+for (let i = 0; i < 10; i++){
+    Counter.increment();
+}
+
+console.log(`Count: ${Counter.getCount()}`);
