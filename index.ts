@@ -16,20 +16,33 @@
 // Bob.name = "Bob Bertson";
 // console.log(Bob.name);
 
-class Counter {
-    private static count = 0;
+// class Counter {
+//     private static count = 0;
 
-    static increment(){
-        Counter.count++;
+//     static increment(){
+//         Counter.count++;
+//     }
+
+//     static getCount(){
+//         return Counter.count;
+//     }
+// }
+
+// for (let i = 0; i < 10; i++){
+//     Counter.increment();
+// }
+
+// console.log(`Count: ${Counter.getCount()}`);
+
+class Circle {
+    static readonly PI = 3.14;
+    private radius: number;
+
+    constructor(r: number) {
+        this.radius = r;
     }
 
-    static getCount(){
-        return Counter.count;
+    getArea(): number {
+        return Circle.PI * this.radius * this.radius;
     }
 }
-
-for (let i = 0; i < 10; i++){
-    Counter.increment();
-}
-
-console.log(`Count: ${Counter.getCount()}`);
