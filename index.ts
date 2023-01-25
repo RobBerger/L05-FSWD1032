@@ -1,25 +1,40 @@
-class Animal {
+abstract class Animal {
     name: string;
 
     constructor(animalName: string) {
         this.name = animalName;
     }
 
-    move(distance: number = 0) {
-        console.log(`${this.name} moved ${distance} units.`);
+    abstract move(): void;
+}
+
+class Penguin extends Animal {
+    canFly: boolean = false;
+
+    constructor(penguinName: string){
+        super(penguinName);
+    }
+
+    move() {
+        console.log('Waddling along...');
     }
 }
 
-class Cow extends Animal{
-    constructor(name: string){
-        super(name);
+class Cow extends Animal {
+    foodType: string;
+
+    constructor(cowName: string, cowFoodType: string = "grass") {
+        super(cowName);
+        this.foodType = cowFoodType;
     }
 
-    move(distance = 2) {
-        console.log('Mooing along....');
-        super.move(distance);
+    move() {
+        console.log(`Moooing along.... eating ${this.foodType}`);
     }
 }
 
-let Bob = new Cow("Bob");
-Bob.move();
+let bob = new Cow("Bob");
+bob.move();
+
+let phil = new Penguin("Phil");
+phil.move();
