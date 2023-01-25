@@ -1,17 +1,28 @@
 "use strict";
-class Person {
-    constructor() {
-        this._name = "Nelson";
+// class Person {
+//     private _name: string = "Nelson";
+//     get name(): string {
+//         return this._name;
+//     }
+//     set name(newName: string) {
+//         if (newName != "") {
+//             this._name = newName;
+//         }
+//     }
+// }
+// let Bob = new Person ();
+// Bob.name = "Bob Bertson";
+// console.log(Bob.name);
+class Counter {
+    static increment() {
+        Counter.count++;
     }
-    get name() {
-        return this._name;
-    }
-    set name(newName) {
-        if (newName != "") {
-            this._name = newName;
-        }
+    static getCount() {
+        return Counter.count;
     }
 }
-let Bob = new Person();
-Bob.name = "Bob Bertson";
-console.log(Bob.name);
+Counter.count = 0;
+for (let i = 0; i < 10; i++) {
+    Counter.increment();
+}
+console.log(`Count: ${Counter.getCount()}`);
